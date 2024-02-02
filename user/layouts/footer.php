@@ -51,21 +51,20 @@
 <script>
     $(document).ready(function () {
         $("#nonUsSelected").addClass('d-none');
-        $("#usSelected").removeClass('d-none');
+        $("#UsSelected").removeClass('d-none'); // Corrected ID
 
         $("#trigUsSelected").click(function () {
             $("#nonUsSelected").addClass('d-none');
-            $("#usSelected").removeClass('d-none');
+            $("#UsSelected").removeClass('d-none');
         });
 
         $(".trigNonUsSelected").click(function () {
             $("#nonUsSelected").removeClass('d-none');
-            $("#usSelected").addClass('d-none');
+            $("#UsSelected").addClass('d-none');
         });
-
-
     });
 </script>
+
 <script>
     $(document).ready(function() {
         App.init();
