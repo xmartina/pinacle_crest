@@ -140,31 +140,20 @@ s0.parentNode.insertBefore(s1,s0);
 <!--  BEGIN CUSTOM SCRIPTS FILE  -->
 <script src="../assets/js/components/notification/custom-snackbar.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initial check on page load
-        checkCountrySelection();
-
+    $(document).ready(function () {
         // Change event for the country select
-        document.getElementById("trigUsSelected").addEventListener("change", function () {
-            checkCountrySelection();
-        });
+        $("#UsSelected").show();
+        $("#nonUsSelected").hide();
 
-        function checkCountrySelection() {
-            var trigUsSelected = document.getElementById("trigUsSelected");
-            var UsSelected = document.getElementById("UsSelected");
-            var nonUsSelected = document.getElementById("nonUsSelected");
-
-            if (trigUsSelected && UsSelected && nonUsSelected) {
-                if (trigUsSelected.options[trigUsSelected.selectedIndex].id === "trigUsSelected") {
-                    UsSelected.style.display = "block";
-                    nonUsSelected.style.display = "none";
-                } else {
-                    UsSelected.style.display = "none";
-                    nonUsSelected.style.display = "block";
-                }
-            }
-        }
-    });
+        $(".trigNonUsSelected").click(function () {
+            $("#nonUsSelected").slideUp(900);
+            $("#UsSelected").slideDown(500);
+        })
+        $(".trigUsSelected").click(function () {
+            $("#nonUsSelected").slideDown(500);
+            $("#UsSelected").slideUp(900);
+        })
+    };
 </script>
 <script>
     var preloadimages=new Array("","")
