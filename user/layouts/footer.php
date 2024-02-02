@@ -38,7 +38,7 @@
 <!-- END MAIN CONTAINER -->
 
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<!--<script src="../assets/js/libs/jquery-3.1.1.min.js"></script>-->
+<script src="../assets/js/libs/jquery-3.1.1.min.js"></script>
 <script src="../bootstrap/js/popper.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
@@ -48,7 +48,24 @@
 <script src="../assets/js/users/account-settings.js"></script>
 <script src="../plugins/dropify/dropify.min.js"></script>
 <script src="../plugins/blockui/jquery.blockUI.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#nonUsSelected").addClass('d-none');
+        $("#usSelected").removeClass('d-none');
 
+        $("#trigUsSelected").click(function () {
+            $("#nonUsSelected").addClass('d-none');
+            $("#usSelected").removeClass('d-none');
+        });
+
+        $("#trigNonUsSelected").click(function () {
+            $("#nonUsSelected").removeClass('d-none');
+            $("#usSelected").addClass('d-none');
+        });
+
+
+    });
+</script>
 <script>
     $(document).ready(function() {
         App.init();

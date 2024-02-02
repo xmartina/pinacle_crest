@@ -343,25 +343,7 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                         </div>
 
-                                        <script>
-                                            $(document).ready(function () {
-                                                $(".trigNonUsSelected").click(function () {
-                                                    $("#nonUsSelected").slideUp(900);
-                                                    $("#UsSelected").slideDown(500);
-                                                });
 
-                                                $(".trigUsSelected").click(function () {
-                                                    $("#nonUsSelected").slideDown(500);
-                                                    $("#UsSelected").slideUp(900);
-                                                });
-
-                                                // Change event for the country select
-                                                $("#trigUsSelected").click();
-                                                // $("#nonUsSelected").hide();
-
-
-                                            });
-                                        </script>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4 mt-4">
