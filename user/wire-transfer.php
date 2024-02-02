@@ -356,7 +356,7 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     </div>
                                                     <div class="input-group" id="UsSelected">
                                                         <select name="bank_name" class='selectpicker' data-width='100%' required>
-                                                            <option disabled selected id="nonConSelect">Select Country</option>
+                                                            <option disabled selected id="nonConSelect">Select Bank</option>
 
                                                             <?php foreach ($list_us_banks as $bank) {
                                                                 $us_bank_name = $bank['acquiring_institution'];
