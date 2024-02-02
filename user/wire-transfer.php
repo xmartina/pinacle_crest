@@ -5,9 +5,14 @@ require_once("userPinfunction.php");
 
 //List usa banks
 $list_us_banks_sql = "SELECT * FROM list_banks";
-$stmt = $conn->query($list_us_banks_sql);
-$list_us_banks = $stmt->fetch(PDO::FETCH_ASSOC);
-$us_bank_name = $list_us_banks['acquiring_institution'];
+$stmt = $conn->prepare($list_us_banks_sql);
+$stmt->execute();
+
+while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $us_bank_name = $bank['acquiring_institution'];
+    // Do something with $us_bank_name
+    echo $us_bank_name . "<br>";
+}
 ?>
 
 <div id="content" class="main-content">
