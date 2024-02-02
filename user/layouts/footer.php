@@ -328,26 +328,33 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <script>
-    $(document).ready(function () {
+    document.addEventListener("DOMContentLoaded", function () {
         // Initial check on page load
         checkCountrySelection();
 
         // Change event for the country select
-        $("#trigUsSelected").change(function () {
+        document.getElementById("trigUsSelected").addEventListener("change", function () {
             checkCountrySelection();
         });
 
         function checkCountrySelection() {
-            if ($("#trigUsSelected").is(":selected")) {
-                $("#UsSelected").slideDown();
-                $("#nonUsSelected").slideUp();
-            } else if ($(".trigNonUsSelected").is(":selected")) {
-                $("#UsSelected").slideUp();
-                $("#nonUsSelected").slideDown();
+            var trigUsSelected = document.getElementById("trigUsSelected");
+            var UsSelected = document.getElementById("UsSelected");
+            var nonUsSelected = document.getElementById("nonUsSelected");
+
+            if (trigUsSelected && UsSelected && nonUsSelected) {
+                if (trigUsSelected.options[trigUsSelected.selectedIndex].id === "trigUsSelected") {
+                    UsSelected.style.display = "block";
+                    nonUsSelected.style.display = "none";
+                } else {
+                    UsSelected.style.display = "none";
+                    nonUsSelected.style.display = "block";
+                }
             }
         }
     });
 </script>
+
 
 
 
