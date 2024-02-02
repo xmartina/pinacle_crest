@@ -340,7 +340,7 @@ s0.parentNode.insertBefore(s1,s0);
             if ($(this).is(":selected")) {
                 $("#UsSelected").show();
                 $("#nonUsSelected").hide();
-            } elseif ($(this).is(":not(:selected)")) {
+            } else if ($(this).is(":not(:selected)")) {
                 $("#UsSelected").hide();
                 $("#nonUsSelected").show();
             }
