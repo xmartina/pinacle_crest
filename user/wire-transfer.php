@@ -8,7 +8,7 @@ $list_us_banks_sql = "SELECT * FROM list_banks";
 $stmt = $conn->prepare($list_us_banks_sql);
 $stmt->execute();
 $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$us_bank_name = $bank['acquiring_institution'];
+$bank_l = $list_us_banks['acquiring_institution'];
 
 ?>
 
