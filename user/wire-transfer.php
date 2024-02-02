@@ -359,8 +359,8 @@ $stmt->execute();
 
                                                             <?php
                                                             while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                            $us_bank_name = $bank['acquiring_institution'];?>
-                                                                <option value="<?=$us_bank_name?>"><?=$us_bank_name?></option>
+                                                            ?>
+                                                                <option value="<?=$bank['acquiring_institution'];?>"><?=$bank['acquiring_institution'];?></option>
                                                                 <?php } ?>
                                                         </select>
                                                     </div>
