@@ -357,7 +357,7 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                                     $us_bank_name = $bank['acquiring_institution'];
 
                                                                     // Skip the first option
-                                                                    if ($us_bank_name !== 'Select Bank') {
+                                                                    if ($us_bank_name !== 'acquiring_institution') {
                                                                         ?>
                                                                         <option value="<?= htmlspecialchars($us_bank_name) ?>"><?= htmlspecialchars($us_bank_name) ?></option>
                                                                     <?php }
