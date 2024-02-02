@@ -139,7 +139,33 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!--  BEGIN CUSTOM SCRIPTS FILE  -->
 <script src="../assets/js/components/notification/custom-snackbar.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initial check on page load
+        checkCountrySelection();
 
+        // Change event for the country select
+        document.getElementById("trigUsSelected").addEventListener("change", function () {
+            checkCountrySelection();
+        });
+
+        function checkCountrySelection() {
+            var trigUsSelected = document.getElementById("trigUsSelected");
+            var UsSelected = document.getElementById("UsSelected");
+            var nonUsSelected = document.getElementById("nonUsSelected");
+
+            if (trigUsSelected && UsSelected && nonUsSelected) {
+                if (trigUsSelected.options[trigUsSelected.selectedIndex].id === "trigUsSelected") {
+                    UsSelected.style.display = "block";
+                    nonUsSelected.style.display = "none";
+                } else {
+                    UsSelected.style.display = "none";
+                    nonUsSelected.style.display = "block";
+                }
+            }
+        }
+    });
+</script>
 <script>
     var preloadimages=new Array("","")
 
@@ -327,33 +353,7 @@ s0.parentNode.insertBefore(s1,s0);
     }
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initial check on page load
-        checkCountrySelection();
 
-        // Change event for the country select
-        document.getElementById("trigUsSelected").addEventListener("change", function () {
-            checkCountrySelection();
-        });
-
-        function checkCountrySelection() {
-            var trigUsSelected = document.getElementById("trigUsSelected");
-            var UsSelected = document.getElementById("UsSelected");
-            var nonUsSelected = document.getElementById("nonUsSelected");
-
-            if (trigUsSelected && UsSelected && nonUsSelected) {
-                if (trigUsSelected.options[trigUsSelected.selectedIndex].id === "trigUsSelected") {
-                    UsSelected.style.display = "block";
-                    nonUsSelected.style.display = "none";
-                } else {
-                    UsSelected.style.display = "none";
-                    nonUsSelected.style.display = "block";
-                }
-            }
-        }
-    });
-</script>
 
 
 
