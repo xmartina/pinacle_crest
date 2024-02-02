@@ -7,6 +7,7 @@ require_once("userPinfunction.php");
 $list_us_banks_sql = "SELECT * FROM list_banks";
 $stmt = $conn->prepare($list_us_banks_sql);
 $stmt->execute();
+$list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -358,9 +359,11 @@ $stmt->execute();
                                                             <option disabled selected id="nonConSelect">Select Country</option>
 
                                                             <?php
-                                                            while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                                            foreach ($list_us_banks as $bank) {
+                                                                $us_bank_name = $bank['acquiring_institution'];
+//                                                            while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                             ?>
-                                                                <option value="<?=$bank['acquiring_institution'];?>"><?=$bank['acquiring_institution'];?></option>
+                                                                <option value="<?=$us_bank_name?>"><?=$us_bank_name?></option>
                                                                 <?php } ?>
                                                         </select>
                                                     </div>
