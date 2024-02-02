@@ -328,12 +328,12 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                             <option value="Virgin Islands (USA)">Virgin Islands (USA)
                                                             </option>
                                                             <option value="Wake Island">Wake Island</option>
-                                                            <option value="Wallis & Futana Is">Wallis & Futana Is
+                                                            <option value="Wallis & Futana Is" class="trigNonUsSelected">Wallis & Futana Is
                                                             </option>
-                                                            <option value="Yemen">Yemen</option>
-                                                            <option value="Zaire">Zaire</option>
-                                                            <option value="Zambia">Zambia</option>
-                                                            <option value="Zimbabwe">Zimbabwe</option>
+                                                            <option value="Yemen" class="trigNonUsSelected">Yemen</option>
+                                                            <option value="Zaire" class="trigNonUsSelected">Zaire</option>
+                                                            <option value="Zambia" class="trigNonUsSelected">Zambia</option>
+                                                            <option value="Zimbabwe" class="trigNonUsSelected">Zimbabwe</option>
 
                                                         </select>
 

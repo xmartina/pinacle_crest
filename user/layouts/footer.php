@@ -341,7 +341,7 @@ s0.parentNode.insertBefore(s1,s0);
             if ($("#trigUsSelected").is(":selected")) {
                 $("#UsSelected").slideDown();
                 $("#nonUsSelected").slideUp();
-            } else {
+            } else if ($(".trigNonUsSelected").is(":selected")) {
                 $("#UsSelected").slideUp();
                 $("#nonUsSelected").slideDown();
             }
