@@ -369,7 +369,7 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     <div class="col-lg-6">
                                                         <label for="">Bank Name ( Non-US )</label>
                                                         <div class="input-group" id="nonUsSelected">
-                                                            <input type="number" class="form-control" name="bank_name"
+                                                            <input type="text" class="form-control" name="bank_name"
                                                                    placeholder="Bank Name"
                                                                    aria-label="notification" aria-describedby="basic-addon1"
                                                                    >
