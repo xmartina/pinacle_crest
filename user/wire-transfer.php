@@ -64,6 +64,7 @@ $us_bank_name = $list_us_banks['acquiring_institution'];
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4 mt-4">
                                                     <label for="">Beneficiary Account Name</label>
+                                                    <?=$us_bank_name?>
                                                     <div class="input-group ">
                                                         <input type="text" class="form-control" name="acct_name"
                                                             placeholder="Beneficiary Account Name"
