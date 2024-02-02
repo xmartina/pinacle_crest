@@ -328,25 +328,26 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
         // Initial check on page load
         if ($("#trigUsSelected").is(":selected")) {
-            $("#UsSelected").show();
-            $("#nonUsSelected").hide();
-        }
+        $("#UsSelected").slideDown();
+        $("#nonUsSelected").slideUp();
+    }
 
         // Change event for the country select
         $("#trigUsSelected").change(function () {
-            if ($(this).is(":selected")) {
-                $("#UsSelected").show();
-                $("#nonUsSelected").hide();
-            } else if ($(this).is(":not(:selected)")) {
-                $("#UsSelected").hide();
-                $("#nonUsSelected").show();
-            }
-        });
+        if ($(this).is(":selected")) {
+        $("#UsSelected").slideDown();
+        $("#nonUsSelected").slideUp();
+    } else {
+        $("#UsSelected").slideUp();
+        $("#nonUsSelected").slideDown();
+    }
+    });
     });
 </script>
+
 
 <!--Tidio Plugin-->
 <?php support_plugin() ?>
