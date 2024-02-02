@@ -313,7 +313,7 @@ $stmt->execute();
                                                             <option value="Ukraine">Ukraine</option>
                                                             <option value="United Arab Erimates">United Arab Emirates
                                                             </option>
-                                                            <option value="United States of America">United States of
+                                                            <option value="United States of America" selected id="trigUsSelected">United States of
                                                                 America</option>
                                                             <option value="Uraguay">Uruguay</option>
                                                             <option value="Uzbekistan">Uzbekistan</option>
@@ -346,7 +346,13 @@ $stmt->execute();
                                             <div class="col-md-6">
                                                 <div class="form-group mb-4 mt-4">
                                                     <label for="">Bank Name</label>
-                                                    <div class="input-group">
+                                                    <div class="input-group" id="nonUsSelected">
+                                                        <input type="number" class="form-control" name="bank_name"
+                                                               placeholder="Bank Name"
+                                                               aria-label="notification" aria-describedby="basic-addon1"
+                                                               required>
+                                                    </div>
+                                                    <div class="input-group" id="UsSelected">
                                                         <select name="bank_name" class='selectpicker'
                                                                 data-width='100%' required>
                                                             <option disabled>Select Country</option>
