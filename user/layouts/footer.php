@@ -51,19 +51,24 @@
 <script>
     $(document).ready(function () {
         $("#nonUsSelected").addClass('d-none');
-        $("#UsSelected").removeClass('d-none'); // Corrected ID
+        $("#UsSelected").removeClass('d-none');
 
-        $("#trigUsSelected").click(function () {
-            $("#nonUsSelected").addClass('d-none');
-            $("#UsSelected").removeClass('d-none');
+        $("#trigUsSelected").change(function () {
+            if ($(this).val() === "United States of America") {
+                $("#nonUsSelected").addClass('d-none');
+                $("#UsSelected").removeClass('d-none');
+            }
         });
 
-        $(".trigNonUsSelected").click(function () {
-            $("#nonUsSelected").removeClass('d-none');
-            $("#UsSelected").addClass('d-none');
+        $(".trigNonUsSelected").change(function () {
+            if ($(this).val() !== "United States of America") {
+                $("#nonUsSelected").removeClass('d-none');
+                $("#UsSelected").addClass('d-none');
+            }
         });
     });
 </script>
+
 
 <script>
     $(document).ready(function() {
