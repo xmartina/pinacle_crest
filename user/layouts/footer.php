@@ -58,7 +58,7 @@
             $("#usSelected").removeClass('d-none');
         });
 
-        $("#trigNonUsSelected").click(function () {
+        $(".trigNonUsSelected").click(function () {
             $("#nonUsSelected").removeClass('d-none');
             $("#usSelected").addClass('d-none');
         });
