@@ -353,7 +353,7 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                                aria-label="notification" aria-describedby="basic-addon1"
                                                                required>
                                                     </div>
-                                                    <div class="input-group" id="UsSelected" style="display: none;">
+                                                    <div class="input-group" id="UsSelected">
                                                         <select name="bank_name" class='selectpicker' data-width='100%' required>
                                                             <option disabled selected id="nonConSelect">Select Country</option>
 

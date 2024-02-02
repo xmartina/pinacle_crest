@@ -148,13 +148,15 @@ s0.parentNode.insertBefore(s1,s0);
         $(".trigNonUsSelected").click(function () {
             $("#nonUsSelected").slideUp(900);
             $("#UsSelected").slideDown(500);
-        })
+        });
+
         $(".trigUsSelected").click(function () {
             $("#nonUsSelected").slideDown(500);
             $("#UsSelected").slideUp(900);
-        })
-    };
+        });
+    });
 </script>
+
 <script>
     var preloadimages=new Array("","")
 
