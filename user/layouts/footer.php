@@ -50,8 +50,8 @@
 <script src="../plugins/blockui/jquery.blockUI.min.js"></script>
 <script>
     $(document).ready(function () {
-        $("#nonUsSelected").addClass('d-none');
-        $("#UsSelected").removeClass('d-none');
+        // $("#nonUsSelected").addClass('d-none');
+        // $("#UsSelected").removeClass('d-none');
 
         $("#trigUsSelected").change(function () {
             if ($(this).val() === "United States of America") {
