@@ -360,7 +360,7 @@ $stmt->execute();
                                                             <?php
                                                             while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                             ?>
-                                                                <option value="<?=$bank['acquiring_institution'];?>"></option>
+                                                                <option value="<?=$bank['acquiring_institution'];?>"><?=$bank['acquiring_institution'];?></option>
                                                                 <?php } ?>
                                                         </select>
                                                     </div>
