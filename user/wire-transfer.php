@@ -8,8 +8,6 @@ $list_us_banks_sql = "SELECT * FROM list_banks";
 $stmt = $conn->prepare($list_us_banks_sql);
 $stmt->execute();
 $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$bank_l = $list_us_banks['acquiring_institution'];
-
 ?>
 
 <div id="content" class="main-content">
@@ -357,9 +355,14 @@ $bank_l = $list_us_banks['acquiring_institution'];
 
                                                                 <?php foreach ($list_us_banks as $bank) {
                                                                     $us_bank_name = $bank['acquiring_institution'];
-                                                                    ?>
-                                                                    <option value="<?=htmlspecialchars($us_bank_name)?>"><?=htmlspecialchars($us_bank_name)?></option>
-                                                                <?php } ?>
+
+                                                                    // Skip the first option
+                                                                    if ($us_bank_name !== 'Select Bank') {
+                                                                        ?>
+                                                                        <option value="<?= htmlspecialchars($us_bank_name) ?>"><?= htmlspecialchars($us_bank_name) ?></option>
+                                                                    <?php }
+                                                                } ?>
+
                                                             </select>
                                                         </div>
                                                     </div>
