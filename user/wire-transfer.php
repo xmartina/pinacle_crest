@@ -8,11 +8,6 @@ $list_us_banks_sql = "SELECT * FROM list_banks";
 $stmt = $conn->prepare($list_us_banks_sql);
 $stmt->execute();
 
-while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $us_bank_name = $bank['acquiring_institution'];
-    // Do something with $us_bank_name
-    echo $us_bank_name . "<br>";
-}
 ?>
 
 <div id="content" class="main-content">
@@ -67,54 +62,12 @@ while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group mb-4 mt-4">
-                                                    <label for="">Beneficiary Account Name</label>
-                                                    <?=$us_bank_name?>
-                                                    <div class="input-group ">
-                                                        <input type="text" class="form-control" name="acct_name"
-                                                            placeholder="Beneficiary Account Name"
-                                                            aria-label="notification" aria-describedby="basic-addon1"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group mb-4 mt-4">
-                                                    <label for="">Bank Name</label>
-                                                    <div class="input-group ">
-                                                        <input type="text" class="form-control" name="bank_name"
-                                                            placeholder="Bank Name" aria-label="notification"
-                                                            aria-describedby="basic-addon1" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group mb-4 mt-4">
-                                                    <label for="">Beneficiary Account No</label>
-                                                    <div class="input-group ">
-                                                        <input type="number" class="form-control" name="acct_number"
-                                                            placeholder="Beneficiary Account Name"
-                                                            aria-label="notification" aria-describedby="basic-addon1"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="row">
-                                            <div class="col-md-6">
 
                                                 <div class="form-group mb-4 mt-4">
                                                     <label for="">Select Country</label>
                                                     <div class="input-group">
                                                         <select name="acct_country" class='selectpicker'
-                                                            data-width='100%' required>
+                                                                data-width='100%' required>
                                                             <option>Select Country</option>
                                                             <option value="Afganistan">Afghanistan</option>
                                                             <option value="Albania">Albania</option>
@@ -384,6 +337,55 @@ while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                         </select>
 
 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-4 mt-4">
+                                                    <label for="">Bank Name</label>
+                                                    <div class="input-group">
+                                                        <select name="bank_name" class='selectpicker'
+                                                                data-width='100%' required>
+                                                            <option disabled>Select Country</option>
+
+                                                            <?php
+                                                            while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                                            $us_bank_name = $bank['acquiring_institution'];?>
+                                                                <option value="<?=$us_bank_name?>"><?=$us_bank_name?></option>
+                                                                <?php } ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-4 mt-4">
+                                                    <label for="">Beneficiary Account No</label>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control" name="acct_number"
+                                                            placeholder="Beneficiary Account Name"
+                                                            aria-label="notification" aria-describedby="basic-addon1"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-4 mt-4">
+                                                    <label for="">Beneficiary Account Name</label>
+                                                    <?=$us_bank_name?>
+                                                    <div class="input-group ">
+                                                        <input type="text" class="form-control" name="acct_name"
+                                                               placeholder="Beneficiary Account Name"
+                                                               aria-label="notification" aria-describedby="basic-addon1"
+                                                               required>
                                                     </div>
                                                 </div>
                                             </div>
