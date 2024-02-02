@@ -349,16 +349,7 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <div class="form-group mb-4 mt-4">
                                                 <div class="row">
                                                     <div class="col-lg-6">
-                                                        <label for="">Bank Name ( Non-US )</label>
-                                                        <div class="input-group" id="nonUsSelected">
-                                                            <input type="number" class="form-control" name="bank_name"
-                                                                   placeholder="Bank Name"
-                                                                   aria-label="notification" aria-describedby="basic-addon1"
-                                                                   required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <label for="">Bank Name ( For US Bank Only )</label>
+                                                        <label for="" style="font-size: 12px;">Bank Name ( For US Bank Only )</label>
                                                         <div class="input-group" id="UsSelected">
                                                             <select name="bank_name" class='selectpicker' data-width='100%' required>
                                                                 <option disabled selected id="nonConSelect">Select Bank</option>
@@ -369,6 +360,15 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                                     <option value="<?=htmlspecialchars($us_bank_name)?>"><?=htmlspecialchars($us_bank_name)?></option>
                                                                 <?php } ?>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="">Bank Name ( Non-US )</label>
+                                                        <div class="input-group" id="nonUsSelected">
+                                                            <input type="number" class="form-control" name="bank_name"
+                                                                   placeholder="Bank Name"
+                                                                   aria-label="notification" aria-describedby="basic-addon1"
+                                                                   required>
                                                         </div>
                                                     </div>
                                                 </div>
