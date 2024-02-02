@@ -355,7 +355,7 @@ $stmt->execute();
                                                     <div class="input-group" id="UsSelected">
                                                         <select name="bank_name" class='selectpicker'
                                                                 data-width='100%' required>
-                                                            <option disabled>Select Country</option>
+                                                            <option disabled selected id="nonConSelect">Select Country</option>
 
                                                             <?php
                                                             while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
