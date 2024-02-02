@@ -354,19 +354,17 @@ $list_us_banks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                                required>
                                                     </div>
                                                     <div class="input-group" id="UsSelected">
-                                                        <select name="bank_name" class='selectpicker'
-                                                                data-width='100%' required>
+                                                        <select name="bank_name" class='selectpicker' data-width='100%' required>
                                                             <option disabled selected id="nonConSelect">Select Country</option>
 
-                                                            <?php
-                                                            foreach ($list_us_banks as $bank) {
+                                                            <?php foreach ($list_us_banks as $bank) {
                                                                 $us_bank_name = $bank['acquiring_institution'];
-//                                                            while ($bank = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                            ?>
-                                                                <option value="<?=$us_bank_name?>"><?=$us_bank_name?></option>
-                                                                <?php } ?>
+                                                                ?>
+                                                                <option value="<?=htmlspecialchars($us_bank_name)?>"><?=htmlspecialchars($us_bank_name)?></option>
+                                                            <?php } ?>
                                                         </select>
                                                     </div>
+
                                                 </div>
                                             </div>
 
